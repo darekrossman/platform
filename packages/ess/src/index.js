@@ -25,7 +25,7 @@ export const useThemeVariants = (key, variant) => {
   return getVariantESS(key, variant, theme)
 }
 
-export const useESS = (_cssObj = {}) => {
+export const useESS = (cssObj = {}) => {
   const [state, setState] = useState(cssObj)
   useEffect(() => {
     if (!deepEqual(state, cssObj)) {
