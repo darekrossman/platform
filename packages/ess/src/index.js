@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useContext, useState } from 'react'
+import React, { useEffect, useMemo, useContext, useState } from 'react'
 import { ThemeContext } from '@emotion/core'
 import deepEqual from 'deep-equal'
 import tokenizer from './tokenizer'
