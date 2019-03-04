@@ -4,6 +4,33 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "deep-equal": "^1.0.1"
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "deep-equal": "^1.0.1",
+    "emotion-theming": "^10.0.7",
+    "react": "^16.8.3",
+    "styled-system": "^4.0.1"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@pika/plugin-build-node": "^0.3.13",
+    "@pika/plugin-build-web": "^0.3.13",
+    "@pika/plugin-standard-pkg": "^0.3.13"
   }
 }
