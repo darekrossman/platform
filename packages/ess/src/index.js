@@ -31,3 +31,8 @@ export default (
   const __ess = useESS(label, { ...variantESS, ...defaults, ...ess })
   return <Component css={__ess} className={_className} {...props} />
 }
+
+export const useThemeVariants = (key, variant) => {
+  const theme = useTheme()
+  return getVariantESS(key, variant, theme)
+}
