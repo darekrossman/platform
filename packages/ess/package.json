@@ -8,7 +8,6 @@
     "@emotion/styled": "^10.0.7",
     "deep-equal": "^1.0.1",
     "emotion-theming": "^10.0.7",
-    "react": "^16.8.3",
     "styled-system": "^4.0.1"
   },
   "scripts": {
@@ -37,7 +36,11 @@
     "@babel/preset-react": "^7.0.0",
     "@pika/plugin-build-node": "^0.3.13",
     "@pika/plugin-build-web": "^0.3.13",
-    "@pika/plugin-standard-pkg": "^0.3.13"
+    "@pika/plugin-standard-pkg": "^0.3.13",
+    "react": "^16.8.3"
   },
-  "gitHead": "81eaf5649bb54b46b9cc4954f922d7c410e7d09a"
+  "gitHead": "81eaf5649bb54b46b9cc4954f922d7c410e7d09a",
+  "peerDependencies": {
+    "react": "^16.8.3"
+  }
 }
