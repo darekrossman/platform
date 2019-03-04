@@ -14,6 +14,9 @@
   "scripts": {
     "build": "pack build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "@pika/pack": {
     "pipeline": [
       [
@@ -35,5 +38,6 @@
     "@pika/plugin-build-node": "^0.3.13",
     "@pika/plugin-build-web": "^0.3.13",
     "@pika/plugin-standard-pkg": "^0.3.13"
-  }
+  },
+  "gitHead": "81eaf5649bb54b46b9cc4954f922d7c410e7d09a"
 }
