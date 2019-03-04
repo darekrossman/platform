@@ -82,7 +82,7 @@ const sysProps = [
   'gridTemplateAreas'
 ]
 
-export const splitTokenizedKeys = props => {
+export const splitProps = props => {
   let sys = {}
   let other = {}
 
