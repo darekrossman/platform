@@ -7,7 +7,12 @@ import { getVariantESS } from "./utils"
 const useTheme = () => useContext(ThemeContext)
 
 export default (label, element, defaultProps = {}, variantNamespace = `${label}Variants`) => {
-  const { variant: defaultVariant, className: defaultClassName, ...defaults } = defaultProps
+  const {
+    variant: defaultVariant,
+    className: defaultClassName,
+    ess: defaultESS,
+    ...defaults
+  } = defaultProps
   return ({ ess = {}, as = element, variant = defaultVariant, className, ...props }) => {
     const theme = useTheme()
     const _className =
@@ -15,7 +20,7 @@ export default (label, element, defaultProps = {}, variantNamespace = `${label}V
       (defaultClassName ? ` ${defaultClassName}` : "") +
       (className ? ` ${className}` : "")
     const variantESS = getVariantESS(variantNamespace, variant, theme)
-    const __ess = useESS({ ...variantESS, ...ess })
+    const __ess = useESS({ ...theme[label], ...defaultESS, ...variantESS, ...ess })
 
     return jsx(as, {
       ...defaults,
