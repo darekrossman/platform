@@ -8,6 +8,7 @@
     "version": "lerna exec npm version",
     "build": "lerna run build",
     "publish": "lerna publish from-package --contents pkg",
+    "publish:patch": "yarn run version patch && git add . && git commit -m \"patch\" && yarn build && yarn run publish",
     "nuke": "lerna exec \"rm -f package-lock.json npm-shrinkwrap.json\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"test -f package-lock.json || npm install --package-lock-only\""
   },
   "devDependencies": {

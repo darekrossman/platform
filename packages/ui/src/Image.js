@@ -1,25 +1,26 @@
-import styled from '@64labs/ess'
+import React from "react"
+import styled from "@64labs/ess"
 
 const ImageContainer = styled(
-  'Image',
-  'div',
+  "Image",
+  "div",
   {
     ess: {
-      pt: '100%',
-      position: 'relative',
-      overflow: 'hidden',
-      '& > *': {
-        position: 'absolute',
+      pt: "100%",
+      position: "relative",
+      overflow: "hidden",
+      "& > *": {
+        position: "absolute",
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        maxWidth: '100%'
+        width: "100%",
+        height: "100%",
+        display: "block",
+        maxWidth: "100%"
       }
     }
   },
-  'ImageVariants'
+  "ImageVariants"
 )
 
 const Image = ({ src, aspectRatio = 1, ...props }) => {
