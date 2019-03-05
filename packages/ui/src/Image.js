@@ -23,10 +23,10 @@ const ImageContainer = styled(
   "ImageVariants"
 )
 
-const Image = ({ src, aspectRatio = 1, ...props }) => {
+const Image = ({ src, ess, imageProps, aspectRatio = 1, ...props }) => {
   return (
-    <ImageContainer ess={{ pt: `${aspectRatio * 100}%` }} {...props}>
-      <img src={src} />
+    <ImageContainer ess={{ pt: `${aspectRatio * 100}%`, ...ess }} {...props}>
+      <img src={src} {...imageProps} />
     </ImageContainer>
   )
 }
