@@ -1,0 +1,35 @@
+{
+  "name": "@64labs/ui",
+  "version": "1.0.0",
+  "main": "pkg/dist-node/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "pack build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "devDependencies": {
+    "@pika/plugin-build-node": "^0.3.13",
+    "@pika/plugin-build-web": "^0.3.13",
+    "@pika/plugin-standard-pkg": "^0.3.13",
+    "@babel/preset-react": "^7.0.0",
+    "@emotion/babel-preset-css-prop": "^10.0.7"
+  },
+  "dependencies": {
+    "@64labs/ess": "^1.0.11"
+  }
+}
