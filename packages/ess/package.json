@@ -1,6 +1,6 @@
 {
   "name": "@64labs/ess",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "pkg/dist-node/index.js",
   "license": "MIT",
   "dependencies": {
