@@ -1,6 +1,6 @@
 {
   "name": "@64labs/ess",
-  "version": "1.0.14",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "source": "src/index.js",
   "license": "MIT",
@@ -19,23 +19,23 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.7",
-    "react": "^16.8.3",
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "emotion-theming": "^10.0.7",
-    "styled-system": "^4.0.1",
+    "react": "^16.8.3",
     "rollup": "^1.6.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.1",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-replace": "^2.1.0"
+    "rollup-plugin-replace": "^2.1.0",
+    "styled-system": "^4.0.1"
   },
   "peerDependencies": {
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "emotion-theming": "^10.0.7",
-    "styled-system": "^4.0.1",
-    "react": "^16.8.3"
+    "react": "^16.8.3",
+    "styled-system": "^4.0.1"
   }
 }
