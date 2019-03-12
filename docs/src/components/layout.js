@@ -36,9 +36,9 @@ const MyCodeComponent = ({ children }) => (
   </LiveProvider>
 )
 
-const Layout = ({ children }) => (
+const Layout = ({ children, ...props }) => (
   <MDXProvider components={{ code: MyCodeComponent }}>
-    <Box>{children}</Box>
+    <Box {...props}>{children}</Box>
   </MDXProvider>
 )
 

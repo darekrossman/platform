@@ -2,7 +2,7 @@ import { useEffect, useMemo, useContext, useState } from 'react'
 import { ThemeContext, jsx } from '@emotion/core'
 import deepEqual from 'deep-equal'
 import tokenizer from './tokenizer'
-import { getVariantESS } from './utils'
+import { getVariantESS, splitProps } from './utils'
 
 const useTheme = () => useContext(ThemeContext)
 
@@ -10,6 +10,7 @@ export const ess = (
   label,
   element,
   defaultProps = {},
+  sysKeys,
   variantNamespace = `${label}Variants`
 ) => {
   const {
@@ -24,24 +25,31 @@ export const ess = (
     as = element,
     variant = defaultVariant,
     className,
-    ...props
+    ...rest
   }) => {
     const theme = useTheme()
+
+    const [componentPropsESS, forwardProps] = sysKeys
+      ? splitProps({ ...defaults, ...rest }, sysKeys)
+      : [{}, rest]
+
     const _className =
       `ess_${label}` +
       (defaultClassName ? ` ${defaultClassName}` : '') +
       (className ? ` ${className}` : '')
+
     const variantESS = getVariantESS(variantNamespace, variant, theme)
+
     const __ess = useESS({
       ...theme[label],
       ...defaultESS,
       ...variantESS,
+      ...componentPropsESS,
       ...ess,
     })
 
     return jsx(as, {
-      ...defaults,
-      ...props,
+      ...forwardProps,
       css: __ess,
       className: _className,
     })
@@ -62,4 +70,37 @@ export const useESS = (cssObj = {}) => {
     }
   }, [cssObj])
   return useMemo(tokenizer(state, theme), [state])
+}
+
+export const tokens = {
+  space: [
+    'm',
+    'mt',
+    'mr',
+    'mb',
+    'ml',
+    'mx',
+    'my',
+    'p',
+    'pt',
+    'pr',
+    'pb',
+    'pl',
+    'px',
+    'py',
+    'mb',
+    'width',
+    'height',
+  ],
+  color: ['color', 'bg'],
+  typography: [
+    'fontSize',
+    'fontFamily',
+    'textAlign',
+    'lineHeight',
+    'fontWeight',
+    'fontStyle',
+    'letterSpacing',
+    'textTransform',
+  ],
 }

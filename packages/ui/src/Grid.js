@@ -6,6 +6,7 @@ const Grid = ess(
   {
     ess: { display: 'grid' },
   },
+  null,
   'BoxVariants'
 )
 

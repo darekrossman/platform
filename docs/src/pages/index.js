@@ -3,8 +3,8 @@ import Layout from '../components/layout'
 import { Text } from '@64labs/ui'
 
 const IndexPage = () => (
-  <Layout>
-    <Text variant="h1" ess={{ color: 'primary' }}>
+  <Layout bg="gray.3">
+    <Text variant="h1" color="secondary">
       hello!
     </Text>
   </Layout>

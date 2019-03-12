@@ -6,6 +6,7 @@ const Flex = ess(
   {
     ess: { display: 'flex' },
   },
+  null,
   'BoxVariants'
 )
 
