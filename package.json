@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "release": "GH_TOKEN=49cd85510c22dcf60dd6b4afb6f20a26f1c6946f lerna publish from-git --github-release --conventional-commits",
+    "release": "GH_TOKEN=49cd85510c22dcf60dd6b4afb6f20a26f1c6946f lerna publish --github-release --conventional-commits",
     "build": "lerna run build",
     "nuke": "rm -rf yarn.lock && lerna exec \"rm -f package-lock.json npm-shrinkwrap.json yarn.lock\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"yarn\""
   },
