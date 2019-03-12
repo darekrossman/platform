@@ -1,7 +1,7 @@
 {
   "name": "platform-docs",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.15",
   "author": "Darek Rossman <drossman@64labs.com>",
   "dependencies": {
     "@64labs/ess": "^1.0.1",
