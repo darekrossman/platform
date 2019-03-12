@@ -6,5 +6,5 @@ tmp/
 temp/
 dist
 .next
-.log
-.out
+*.log
+*.out

@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "version": "lerna version",
+    "release": "lerna version --github-release --conventional-commits",
     "build": "lerna run build",
     "publish": "lerna publish from-package --contents dist",
     "publish:patch": "yarn run version patch && git add . && git commit -m \"patch\" && yarn build && yarn run publish",
