@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "version": "lerna version",
-    "release": "lerna version --github-release --conventional-commits",
+    "release": "GH_TOKEN=49cd85510c22dcf60dd6b4afb6f20a26f1c6946f lerna version --github-release --conventional-commits",
     "build": "lerna run build",
     "publish": "lerna publish from-package --contents dist",
     "publish:patch": "yarn run version patch && git add . && git commit -m \"patch\" && yarn build && yarn run publish",

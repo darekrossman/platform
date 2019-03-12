@@ -1,11 +1,11 @@
 {
   "name": "platform-docs",
   "private": true,
-  "version": "1.0.15",
+  "version": "1.0.16",
   "author": "Darek Rossman <drossman@64labs.com>",
   "dependencies": {
-    "@64labs/ess": "^1.0.1",
-    "@64labs/ui": "^1.0.1",
+    "@64labs/ess": "^1.0.16",
+    "@64labs/ui": "^1.0.16",
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.9",
     "@mdx-js/mdx": "^0.20.3",
