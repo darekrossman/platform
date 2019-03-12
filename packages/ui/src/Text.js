@@ -1,5 +1,5 @@
-import styled from '@64labs/ess'
+import { ess } from '@64labs/ess'
 
-const Text = styled('Text', 'p', { variant: 'p' })
+const Text = ess('Text', 'p', { variant: 'p' })
 
 export default Text

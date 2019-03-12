@@ -1,0 +1,57 @@
+{
+  "name": "platform-docs",
+  "private": true,
+  "version": "0.0.1",
+  "author": "Darek Rossman <drossman@64labs.com>",
+  "dependencies": {
+    "@64labs/ess": "^1.0.14",
+    "@64labs/ui": "^1.0.3",
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
+    "@mdx-js/mdx": "^0.20.3",
+    "@mdx-js/tag": "^0.20.3",
+    "emotion-theming": "^10.0.9",
+    "gatsby": "^2.1.29",
+    "gatsby-image": "^2.0.31",
+    "gatsby-mdx": "^0.4.3",
+    "gatsby-plugin-emotion": "^4.0.6",
+    "gatsby-plugin-manifest": "^2.0.22",
+    "gatsby-plugin-offline": "^2.0.24",
+    "gatsby-plugin-react-helmet": "^3.0.8",
+    "gatsby-plugin-sharp": "^2.0.26",
+    "gatsby-source-filesystem": "^2.0.23",
+    "gatsby-transformer-sharp": "^2.1.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0",
+    "styled-system": "^4.0.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "gatsby-plugin-eslint": "^2.0.4",
+    "prettier": "^1.16.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint src",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  }
+}

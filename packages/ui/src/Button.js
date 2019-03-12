@@ -1,5 +1,5 @@
-import styled from '@64labs/ess'
+import { ess } from '@64labs/ess'
 
-const Button = styled('Button', 'button', { variant: 'primary' })
+const Button = ess('Button', 'button', { variant: 'primary' })
 
 export default Button

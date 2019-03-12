@@ -1,5 +1,5 @@
-import styled from '@64labs/ess'
+import { ess } from '@64labs/ess'
 
-const Box = styled('Box', 'div')
+const Box = ess('Box', 'div')
 
 export default Box

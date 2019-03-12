@@ -1,10 +1,10 @@
-import styled from '@64labs/ess'
+import { ess } from '@64labs/ess'
 
-const Grid = styled(
+const Grid = ess(
   'Grid',
   'div',
   {
-    ess: { display: 'grid' }
+    ess: { display: 'grid' },
   },
   'BoxVariants'
 )

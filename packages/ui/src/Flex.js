@@ -1,10 +1,10 @@
-import styled from '@64labs/ess'
+import { ess } from '@64labs/ess'
 
-const Flex = styled(
+const Flex = ess(
   'Flex',
   'div',
   {
-    ess: { display: 'flex' }
+    ess: { display: 'flex' },
   },
   'BoxVariants'
 )

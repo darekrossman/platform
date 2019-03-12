@@ -1,12 +1,12 @@
-import * as sys from 'styled-system'
-import {splitProps, tokenizeStyleProp} from './utils'
+import * as sys from "styled-system"
+import { splitProps, tokenizeStyleProp } from "./utils"
 
 const tokenizer = (styles, theme) => () => {
   const interpolatedStyles = Object.keys(styles).reduce((a, b) => {
     return {
       ...a,
       [b]:
-        Array.isArray(styles[b]) || typeof styles[b] === 'string' || typeof styles[b] === 'number'
+        Array.isArray(styles[b]) || typeof styles[b] === "string" || typeof styles[b] === "number"
           ? styles[b]
           : tokenizer(styles[b], theme)()
     }
@@ -71,12 +71,12 @@ const tokenizer = (styles, theme) => () => {
     sys.gridTemplateRows(props),
     sys.gridTemplateColumns(props),
     sys.gridTemplateAreas(props),
-    tokenizeStyleProp('transform', 'transform')(props),
-    tokenizeStyleProp('transition', 'transition', 'transitions')(props),
-    tokenizeStyleProp('blend', 'mix-blend-mode')(props),
-    tokenizeStyleProp('filter', 'filter')(props),
-    tokenizeStyleProp('borderImage', 'border-image')(props),
-    tokenizeStyleProp('listStyle', 'list-style')(props)
+    tokenizeStyleProp("transform", "transform")(props),
+    tokenizeStyleProp("transition", "transition", "transitions")(props),
+    tokenizeStyleProp("blend", "mix-blend-mode")(props),
+    tokenizeStyleProp("filter", "filter")(props),
+    tokenizeStyleProp("borderImage", "border-image")(props),
+    tokenizeStyleProp("listStyle", "list-style")(props)
   ]
 }
 

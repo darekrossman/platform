@@ -5,7 +5,7 @@ const Image = ({ src, ess, imageProps, aspectRatio = 1, ...props }) => {
   return (
     <Box
       ess={{
-        pt: `-${aspectRatio * 100}%`,
+        pt: `${aspectRatio * 100}%`,
         position: "relative",
         overflow: "hidden",
         "& > *": {
