@@ -1,12 +1,14 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
+import 'typeface-work-sans'
+
+const defaultFont = 'Work Sans'
 
 const baseHeight = 8
 
 const breakpoints = ['40em', '52em', '64em', '100em']
 
-const defaultFontList =
-  '-apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif'
+const defaultFontList = `${defaultFont}, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif`
 
 const colors = {
   primary: '#9a0dd1',
@@ -15,10 +17,21 @@ const colors = {
 }
 
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
+
 const fontSizes = [13, 15, 16, 18, 24, 32, 48, 64]
+
 const lineHeights = [1, 1.125, 1.25, 1.5]
-const fontWeights = { normal: 400, bold: 900 }
-const fontFamilies = [`'Lato', ${defaultFontList}`]
+
+const fontWeights = {
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+}
+
+const fontFamilies = [defaultFontList]
 
 const TextVariants = {
   h1: {
@@ -86,13 +99,15 @@ const ButtonVariants = {
     color: 'gray.0',
   },
   large: {
-    height: 50,
+    height: 48,
     px: 4,
   },
   small: {
     fontSize: 0,
     fontWeight: 'semibold',
     textTransform: 'none',
+    height: 24,
+    px: 2,
   },
   icon: {
     width: 35,
@@ -134,6 +149,7 @@ export default {
   fontWeights,
   fontFamilies,
   TextVariants,
+  Box,
   BoxVariants,
   Button,
   ButtonVariants,
@@ -144,8 +160,6 @@ export default {
 export const GlobalStyle = () => (
   <Global
     styles={css`
-      @import url('https://fonts.googleapis.com/css?family=Lato:400,900');
-
       * {
         margin: 0;
         padding: 0;
@@ -160,18 +174,10 @@ export const GlobalStyle = () => (
       html,
       body {
         font-family: ${fontFamilies[0]};
-        color: #252525;
         font-size: ${fontSizes[1]}px;
         line-height: ${lineHeights[3]};
         position: relative;
-      }
-
-      @media print {
-        html,
-        body {
-          overflow: visible;
-          height: auto;
-        }
+        min-height: 100vh;
       }
 
       button,

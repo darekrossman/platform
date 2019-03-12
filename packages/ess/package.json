@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c"
+    "dev": "rollup -c -w"
   },
   "publishConfig": {
     "access": "public"
@@ -20,6 +20,10 @@
     "@babel/preset-react": "^7.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.7",
     "react": "^16.8.3",
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
+    "emotion-theming": "^10.0.7",
+    "styled-system": "^4.0.1",
     "rollup": "^1.6.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.1",

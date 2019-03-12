@@ -1,6 +1,34 @@
 import Layout from '../components/layout'
 import { Box, Text } from '@64labs/ui'
 
-# Hello There!
+<Box>
 
-<Text>Text Component</Text>
+```
+/** @jsx jsx */
+
+<div css={{ '.ess_Text': {marginBottom: '16px'}} }>
+  <Text variant="h1">Hello World!!!</Text>
+  <Text variant="h2">Hello World!!!</Text>
+  <Text variant="h3">Hello World!!!</Text>
+  <Text variant="h4">Hello World!!!</Text>
+  <Text variant="subtitle">Hello World!!!</Text>
+  <Text variant="p">Hello World!!!</Text>
+  <Text variant="label">Hello World!!!</Text>
+  <Text variant="caption">Hello World!!!</Text>
+</div>
+```
+
+```
+/** @jsx jsx */
+
+<Flex ess={{ p: 3, justifyContent: 'space-around', alignItems: 'center' }}>
+  <Button>Button</Button>
+  <Button variant="secondary">Button</Button>
+  <Button variant="plain">Button</Button>
+  <Button variant="large">Button</Button>
+  <Button variant="small">Button</Button>
+  <Button variant="transparent">Button</Button>
+</Flex>
+```
+
+</Box>
