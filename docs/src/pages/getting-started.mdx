@@ -1,0 +1,38 @@
+import Layout from '../components/layout'
+import { Box, Text } from '@64labs/ui'
+
+# Getting Started
+
+## Install packages
+
+```bash
+yarn add @64labs/ess @64labs/ui
+```
+
+## Install dependencies
+
+Our library depends on Emotion v10 and it's `css` prop magic.
+
+```bash
+yarn add @emotion/core @emotion/babel-preset-css-prop
+```
+
+## Set up theme provider
+
+Wrap the root of your app with our `ThemeProvider`, passing it your own theme as a prop.
+
+```js
+import { ThemeProvider } from 'emotion-theming'
+
+const theme = {
+  // ...theme
+}
+
+const App () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  )
+}
+```

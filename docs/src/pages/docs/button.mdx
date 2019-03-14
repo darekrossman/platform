@@ -1,0 +1,96 @@
+# Button
+
+```jsx
+<Button>Default</Button>
+```
+
+## Style Props
+
+### space
+
+- `m`
+- `mt`
+- `mr`
+- `mb`
+- `ml`
+- `mx`
+- `my`
+- `p`
+- `pt`
+- `pr`
+- `pb`
+- `pl`
+- `px`
+- `py`
+- `mb`
+- `width`
+- `height`
+
+### color
+
+- `color`
+- `bg`
+
+### typography
+
+- `fontSize`
+- `fontFamily`
+- `textAlign`
+- `lineHeight`
+- `fontWeight`
+- `fontStyle`
+- `letterSpacing`
+- `textTransform`
+
+## Customize
+
+The `Button` component, like other ESS components, wraps a single DOM primitive (in this case, a `<button>`). Its base styles are defined in the theme, under a key of the component's name: `Button`.
+
+```js
+theme.Button = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: baseHeight * 4,
+  px: 3,
+  bg: 'primary',
+  color: 'white',
+  border: 0,
+  fontSize: 1,
+  lineHeight: 0,
+  fontWeight: 'bold',
+}
+
+theme.ButtonVariants = {
+  secondary: {
+    bg: 'secondary',
+    color: 'white',
+  },
+  plain: {
+    bg: 'gray.4',
+    color: 'gray.0',
+  },
+  large: {
+    height: 48,
+    px: 4,
+  },
+  small: {
+    fontSize: 0,
+    fontWeight: 'semibold',
+    textTransform: 'none',
+    height: 24,
+    px: 2,
+  },
+  icon: {
+    width: 35,
+    px: 0,
+    bg: 'transparent',
+    color: 'gray.0',
+  },
+  transparent: {
+    bg: 'transparent',
+    color: '#181818',
+    fontWeight: 'semibold',
+  },
+}
+```

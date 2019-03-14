@@ -33,10 +33,14 @@ export const ess = (
       ? splitProps({ ...defaults, ...rest }, sysKeys)
       : [{}, rest]
 
-    const _className =
+    let _className =
       `ess_${label}` +
       (defaultClassName ? ` ${defaultClassName}` : '') +
       (className ? ` ${className}` : '')
+
+    if (variant !== defaultVariant) {
+      _className += ` ess_${label}--${variant}`
+    }
 
     const variantESS = getVariantESS(variantNamespace, variant, theme)
 

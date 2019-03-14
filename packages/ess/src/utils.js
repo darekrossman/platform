@@ -67,7 +67,6 @@ const sysProps = [
   'blend',
   'filter',
   'borderImage',
-  'listStyle',
   'gridGap',
   'gridRowGap',
   'gridColumnGap',

@@ -78,7 +78,6 @@ const tokenizer = (styles, theme) => () => {
     tokenizeStyleProp('blend', 'mix-blend-mode')(props),
     tokenizeStyleProp('filter', 'filter')(props),
     tokenizeStyleProp('borderImage', 'border-image')(props),
-    tokenizeStyleProp('listStyle', 'list-style')(props),
   ]
 }
 

@@ -8589,6 +8589,11 @@ markdown-table@^1.1.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
   integrity sha512-NcWuJFHDA8V3wkDgR/j4+gZx+YQwstPgfQDV8ndUeWWzta3dnDTBxpVzqS9lkmJAuV5YX35lmyojl6HO5JXAgw==
 
+material-colors@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
+  integrity sha512-6qE4B9deFBIa9YSpOc9O0Sgc43zTeVYbgDT5veRKSlB2+ZuHNoVVxA1L/ckMUayV9Ay9y7Z/SZCLcGteW9i7bg==
+
 md5-file@^3.1.1:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/md5-file/-/md5-file-3.2.3.tgz#f9bceb941eca2214a4c0727f5e700314e770f06f"
@@ -10604,6 +10609,11 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
+prism-react-renderer@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-0.1.6.tgz#c9216baa234fab1c234209fcdaf0cd23a01c50a9"
+  integrity sha512-uZJn5wrygCH0ZMue+2JRd0qJharrmpxa6/uK7deKgvCtJFFE+VsyvJ49LS8/ATt0mlAJS6vFQTDvhXBEXsda+A==
+
 prismjs@1.6:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.6.0.tgz#118d95fb7a66dba2272e343b345f5236659db365"
@@ -10966,6 +10976,11 @@ react-live@^1.12.0:
     prismjs "1.6"
     prop-types "^15.5.8"
     unescape "^0.2.0"
+
+react-prism@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/react-prism/-/react-prism-4.3.2.tgz#5c07609539b3ba6f45eb33e7d6a3588df3270c21"
+  integrity sha512-Z8BzDfWxzhngDtnZFjYj4RgHo7uqiWB4cOCpp//GFEpWbtINbCqHLIpL+q/f8ah5Aokw/uXkBkoLgvYIGgtm4A==
 
 react-side-effect@^1.1.0:
   version "1.1.5"

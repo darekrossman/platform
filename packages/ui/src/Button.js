@@ -1,5 +1,7 @@
-import { ess } from '@64labs/ess'
+import { ess, tokens } from '@64labs/ess'
 
-const Button = ess('Button', 'button', { variant: 'primary' })
+const tokenProps = [...tokens.space, ...tokens.color, ...tokens.typography]
+
+const Button = ess('Button', 'button', { variant: 'primary' }, tokenProps)
 
 export default Button
