@@ -82,6 +82,9 @@ const Sidebar = () => {
             <li>
               <Link to="/docs/button">Button</Link>
             </li>
+            <li>
+              <Link to="/docs/image">Image</Link>
+            </li>
           </ul>
         </li>
       </ul>

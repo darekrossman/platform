@@ -2,6 +2,7 @@ import React from 'react'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { Box, Flex, Grid, Text, Button, Image } from '@64labs/ui'
+import * as hooks from '@64labs/hooks'
 import prismTheme from './prism-theme'
 
 const scope = {
@@ -11,6 +12,7 @@ const scope = {
   Text,
   Button,
   Image,
+  ...hooks,
 }
 
 export default ({ children, ...props }) => {

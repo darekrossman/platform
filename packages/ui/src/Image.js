@@ -1,29 +1,29 @@
-import React from "react"
-import Box from "./Box"
+import React from 'react'
+import Box from './Box'
 
-const Image = ({ src, ess, imageProps, aspectRatio = 1, ...props }) => {
+const Image = ({ src, ess, imageProps, aspectRatio = 1, ...props }, ref) => {
   return (
     <Box
       ess={{
         pt: `${aspectRatio * 100}%`,
-        position: "relative",
-        overflow: "hidden",
-        "& > *": {
-          position: "absolute",
+        position: 'relative',
+        overflow: 'hidden',
+        '& > *': {
+          position: 'absolute',
           top: 0,
           left: 0,
-          width: "100%",
-          height: "100%",
-          display: "block",
-          maxWidth: "100%"
+          width: '100%',
+          height: '100%',
+          display: 'block',
+          maxWidth: '100%',
         },
-        ...ess
+        ...ess,
       }}
       {...props}
     >
-      <img src={src} {...imageProps} />
+      <img ref={ref} src={src} {...imageProps} />
     </Box>
   )
 }
 
-export default Image
+export default React.forwardRef(Image)

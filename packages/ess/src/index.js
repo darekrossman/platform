@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useContext, useState } from 'react'
+import { forwardRef, useEffect, useMemo, useContext, useState } from 'react'
 import { ThemeContext, jsx } from '@emotion/core'
 import deepEqual from 'deep-equal'
 import tokenizer from './tokenizer'
@@ -20,44 +20,44 @@ export const ess = (
     ...defaults
   } = defaultProps
 
-  return ({
-    ess = {},
-    as = element,
-    variant = defaultVariant,
-    className,
-    ...rest
-  }) => {
-    const theme = useTheme()
+  return forwardRef(
+    (
+      { ess = {}, as = element, variant = defaultVariant, className, ...rest },
+      ref
+    ) => {
+      const theme = useTheme()
 
-    const [componentPropsESS, forwardProps] = sysKeys
-      ? splitProps({ ...defaults, ...rest }, sysKeys)
-      : [{}, rest]
+      const [componentPropsESS, forwardProps] = sysKeys
+        ? splitProps({ ...defaults, ...rest }, sysKeys)
+        : [{}, rest]
 
-    let _className =
-      `ess_${label}` +
-      (defaultClassName ? ` ${defaultClassName}` : '') +
-      (className ? ` ${className}` : '')
+      let _className =
+        `ess_${label}` +
+        (defaultClassName ? ` ${defaultClassName}` : '') +
+        (className ? ` ${className}` : '')
 
-    if (variant !== defaultVariant) {
-      _className += ` ess_${label}--${variant}`
+      if (variant !== defaultVariant) {
+        _className += ` ess_${label}--${variant}`
+      }
+
+      const variantESS = getVariantESS(variantNamespace, variant, theme)
+
+      const __ess = useESS({
+        ...theme[label],
+        ...defaultESS,
+        ...variantESS,
+        ...componentPropsESS,
+        ...ess,
+      })
+
+      return jsx(as, {
+        ...forwardProps,
+        ref,
+        css: __ess,
+        className: _className,
+      })
     }
-
-    const variantESS = getVariantESS(variantNamespace, variant, theme)
-
-    const __ess = useESS({
-      ...theme[label],
-      ...defaultESS,
-      ...variantESS,
-      ...componentPropsESS,
-      ...ess,
-    })
-
-    return jsx(as, {
-      ...forwardProps,
-      css: __ess,
-      className: _className,
-    })
-  }
+  )
 }
 
 export const useThemeVariants = (key, variant) => {

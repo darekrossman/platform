@@ -5,6 +5,7 @@
   "author": "Darek Rossman <drossman@64labs.com>",
   "dependencies": {
     "@64labs/ess": "^1.0.18",
+    "@64labs/hooks": "^1.0.0",
     "@64labs/ui": "^1.0.19",
     "@emotion/core": "^10.0.9",
     "@emotion/styled": "^10.0.9",

@@ -1,0 +1,32 @@
+# Image
+
+## With lazy hook
+
+```jsx noInline
+render(() => {
+  const [num, setNum] = React.useState(Date.now())
+  const src = `https://picsum.photos/300/?random=${num}`
+  const { viewRef, imageRef, inView, loaded } = useLazyImage(null, [src])
+
+  return (
+    <>
+      <Box
+        ref={viewRef}
+        ess={{
+          width: 300,
+          transition: 'all 300ms ease-out',
+        }}
+        style={{
+          opacity: loaded && inView ? 1 : 0,
+          transform: `scale(${loaded && inView ? 1 : 0.9})`,
+        }}
+      >
+        <Image ref={imageRef} src={inView ? src : undefined} />
+      </Box>
+      <Button mt={3} onClick={() => setNum(Date.now())}>
+        Change Image
+      </Button>
+    </>
+  )
+})
+```
