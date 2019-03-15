@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { useESS } from '@64labs/ess'
-import { Box, Flex, Text } from '@64labs/ui'
+import { Box, Text } from '@64labs/ui'
 
 const Sidebar = () => {
   return (
@@ -42,13 +41,13 @@ const Sidebar = () => {
           <Text variant="h6">Documentation</Text>
           <ul>
             <li>
-              <Link to="/introduction">Introduction</Link>
+              <Link to="/docs/introduction">Introduction</Link>
             </li>
             <li>
-              <Link to="/getting-started">Getting Started</Link>
+              <Link to="/docs/getting-started">Getting Started</Link>
             </li>
             <li>
-              <Link to="/how-it-works">How It Works</Link>
+              <Link to="/docs/how-it-works">How It Works</Link>
             </li>
           </ul>
         </li>
@@ -57,16 +56,16 @@ const Sidebar = () => {
           <Text variant="h6">Guides</Text>
           <ul>
             <li>
-              <Link to="/introduction">UI Primitives</Link>
+              <Link to="/docs/introduction">UI Primitives</Link>
             </li>
             <li>
-              <Link to="/getting-started">Creating Components</Link>
+              <Link to="/docs/creating-components">Creating Components</Link>
             </li>
             <li>
-              <Link to="/how-it-works">Theme System</Link>
+              <Link to="/docs/how-it-works">Theme System</Link>
             </li>
             <li>
-              <Link to="/how-it-works">Tokens & Variants</Link>
+              <Link to="/docs/how-it-works">Tokens & Variants</Link>
             </li>
           </ul>
         </li>

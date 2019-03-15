@@ -1,4 +1,12 @@
-import { ess } from '@64labs/ess'
+import { ess, tokens } from '@64labs/ess'
+
+const tokenProps = [
+  ...tokens.space,
+  ...tokens.color,
+  'position',
+  'display',
+  'zIndex',
+]
 
 const Flex = ess(
   'Flex',
@@ -6,7 +14,7 @@ const Flex = ess(
   {
     ess: { display: 'flex' },
   },
-  null,
+  tokenProps,
   'BoxVariants'
 )
 

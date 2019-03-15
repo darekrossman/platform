@@ -1,0 +1,84 @@
+import { Text } from '@64labs/ui'
+import Callout from '../../components/callout'
+
+# Creating Components
+
+<Text variant="subhead1">
+  From a small set of simple primitives, we can build more complex, composite
+  components while easily maintaining a consistent look & feel across our app.
+</Text>
+
+## Building primitives
+
+Every component, whether its a simple text component or a full-featured modal, can be broken down into a set of simpler, primitive components. Let's try it.
+
+### Breaking down a modal
+
+Looking at what a standard modal actually does, we can see that its really just an element that can be shown or hidden in response to some events. It typically sits above the current page content, using absolute or fixed positioning. There might also be a semi-transparent overlay behind the modal element itself to dim the content in the background.
+
+#### What are the minimum elements needed to build a basic modal?
+
+- _container_: `<div>` element
+- _background overlay_: `<div>` element
+- _content container_: `<div>` element
+
+<Callout level="info" mt={4}>
+  <Text variant="h4">Keeping it simple</Text>
+  <Text>
+    Let's set aside the fancy stuff like transitions and portals for now. We'll
+    come back to those concepts later.
+  </Text>
+</Callout>
+
+### A basic modal
+
+```jsx noInline
+// Our modal consists of a container, an overlay, and content container.
+// All styling is accomplished via our ESS UI primitives and their system
+// styling props, along with a couple variants defined in our theme.
+
+const Modal = ({ isOpen, children }) =>
+  isOpen && (
+    <Flex variant="cover" position="fixed">
+      <Box
+        variant="cover"
+        position="fixed"
+        bg="rgba(0, 0, 0, 0.5)"
+        zIndex={1}
+      />
+      <Box position="relative" width={475} m="auto" zIndex={2}>
+        {children}
+      </Box>
+    </Flex>
+  )
+
+// Let's render a component that makes use of our modal.
+
+render(() => {
+  const [isOpen, setOpenState] = React.useState(false)
+
+  const toggleModal = () => setOpenState(!isOpen)
+
+  return (
+    <div>
+      <Button onClick={toggleModal}>Open Modal</Button>
+
+      <Modal isOpen={isOpen}>
+        <Box p={3} bg="white">
+          <Text variant="h3">Simple</Text>
+          <Text>
+            With a few simple primitives, we've got a functioning Modal!
+          </Text>
+          <Button mt={3} onClick={toggleModal}>
+            Close
+          </Button>
+        </Box>
+      </Modal>
+    </div>
+  )
+})
+```
+
+### A closer look
+
+By making use of our ESS UI primitives, we can rapidly build more complex components, taking advantage of both the familiar props API and simple theme variants.
