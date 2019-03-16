@@ -28,5 +28,9 @@
   "peerDependencies": {
     "@64labs/ess": "^1.0.1",
     "react": "^16.8.3"
+  },
+  "dependencies": {
+    "@64labs/hooks": "^1.0.0",
+    "react-spring": "^8.0.15"
   }
 }

@@ -1,32 +1,37 @@
 # Image
 
-## With lazy hook
+## Basic Example
+
+```jsx
+<Image
+  src="https://picsum.photos/680/300/?random"
+  width={680}
+  height={300}
+  fluid
+/>
+```
+
+## Loading Transition
+
+Images automatically fade in when they are loaded and ready to be displayed. The fade transition is controlled by [react-spring](https://www.react-spring.io), which helps make the transition smooth even as the image's `src` is changing.
+
+You can pass your own config to `react-spring` via the `springConfig` prop. It takes a function that passes the ready state of the image, along with the default config. The return value is shallow merged with the default spring config.
 
 ```jsx noInline
 render(() => {
-  const [num, setNum] = React.useState(Date.now())
-  const src = `https://picsum.photos/300/?random=${num}`
-  const { viewRef, imageRef, inView, loaded } = useLazyImage(null, [src])
-
+  const [time, setTime] = React.useState(Date.now())
   return (
-    <>
-      <Box
-        ref={viewRef}
-        ess={{
-          width: 300,
-          transition: 'all 300ms ease-out',
-        }}
-        style={{
-          opacity: loaded && inView ? 1 : 0,
-          transform: `scale(${loaded && inView ? 1 : 0.9})`,
-        }}
-      >
-        <Image ref={imageRef} src={inView ? src : undefined} />
-      </Box>
-      <Button mt={3} onClick={() => setNum(Date.now())}>
-        Change Image
+    <div>
+      <Image
+        src={`https://picsum.photos/300/?random=${time}`}
+        width={300}
+        height={300}
+        springConfig={ready => ({ transform: `scale(${ready ? 1 : 0.9})` })}
+      />
+      <Button mt={3} onClick={() => setTime(Date.now())}>
+        Load New Image
       </Button>
-    </>
+    </div>
   )
 })
 ```

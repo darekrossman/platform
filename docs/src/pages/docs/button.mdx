@@ -1,7 +1,13 @@
 # Button
 
 ```jsx
-<Button>Default</Button>
+<Flex ess={{ '*': { mx: 3 }, alignItems: 'center' }}>
+  <Button>Default</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="small">Small</Button>
+  <Button variant={['large', 'secondary']}>Large</Button>
+  <Button variant="plain">Plain</Button>
+</Flex>
 ```
 
 ## Style Props

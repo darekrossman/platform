@@ -28,7 +28,7 @@ export default ({ children, ...props }) => {
           theme={undefined}
         >
           {({ className, tokens, getLineProps, getTokenProps }) => (
-            <Box ess={{ border: '1px solid', borderColor: 'code.borders' }}>
+            <Box>
               <pre className={className}>
                 {tokens.map((line, i) => (
                   <div {...getLineProps({ line, key: i })}>
@@ -45,8 +45,6 @@ export default ({ children, ...props }) => {
         <Box
           ess={{
             position: 'relative',
-            border: '1px solid',
-            borderColor: 'code.borders',
           }}
         >
           <LiveProvider
@@ -68,7 +66,11 @@ export default ({ children, ...props }) => {
               <LiveError />
             </Box>
 
-            <Box p={4}>
+            <Box
+              p={3}
+              mb="2px"
+              ess={{ border: '1px solid', borderColor: 'palette.grey.200' }}
+            >
               <LivePreview />
             </Box>
 

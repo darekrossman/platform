@@ -4,19 +4,23 @@ export default theme => css`
   .react-live-preview {
     font-family: ${theme.fontFamilies[0]};
     white-space: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .prism-code:focus {
     outline: none;
-    box-shadow: 0px 0px 0px 3px ${theme.colors.code.borders};
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
   }
 
   code[class*='language-'],
   pre[class*='language-'] {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-      Courier New, monospace;
+    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+      monospace;
     font-size: 14px;
     line-height: 1.375;
+    font-weight: bold;
     direction: ltr;
     text-align: left;
     white-space: pre;
@@ -31,6 +35,7 @@ export default theme => css`
     hyphens: none;
     background: ${theme.colors.code.bg};
     color: ${theme.colors.code.text};
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
   }
 
   pre[class*='language-']::-moz-selection,
@@ -61,6 +66,10 @@ export default theme => css`
     border-radius: 0.3em;
   }
 
+  .token.language-javascript {
+    color: ${theme.colors.code.jstext};
+  }
+
   .token.comment,
   .token.prolog,
   .token.doctype,
@@ -76,15 +85,25 @@ export default theme => css`
     opacity: 0.7;
   }
 
-  .token.tag,
-  .token.number {
+  .token.tag {
     color: ${theme.colors.code.tag};
   }
 
   .token.tag.punctuation,
-  .token.tag.script-punctuation,
-  .token.operator {
+  .token.tag.script-punctuation {
     color: ${theme.colors.code.punctuation};
+  }
+
+  .token.interpolation-punctuation {
+    color: white;
+  }
+
+  .token.number {
+    color: ${theme.colors.code.number};
+  }
+
+  .token.operator {
+    color: ${theme.colors.code.operator};
   }
 
   .token.property {
@@ -103,7 +122,6 @@ export default theme => css`
     color: ${theme.colors.code.selector};
   }
 
-  code.language-javascript,
   .token.attr-name {
     color: ${theme.colors.code.keyword};
   }
