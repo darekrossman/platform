@@ -8,6 +8,7 @@
   "scripts": {
     "release": "GH_TOKEN=c3ee482c3d553039cab69b176dab345f219f72e9 lerna publish --github-release --conventional-commits",
     "build": "lerna run build",
+    "build:docs": "cd docs && yarn build",
     "nuke": "rm -rf yarn.lock && lerna exec \"rm -f package-lock.json npm-shrinkwrap.json yarn.lock\" && lerna clean --yes && lerna bootstrap && lerna exec --stream -- \"yarn\""
   },
   "devDependencies": {
