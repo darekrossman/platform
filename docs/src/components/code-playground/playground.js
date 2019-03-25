@@ -19,7 +19,7 @@ export default ({ children, ...props }) => {
   const language = props.className.replace('language-', '')
 
   return (
-    <Box css={prismTheme} mb={4} mx={-3}>
+    <Box css={prismTheme} mb={4}>
       {language !== 'jsx' ? (
         <Highlight
           {...defaultProps}
@@ -74,7 +74,9 @@ export default ({ children, ...props }) => {
               <LivePreview />
             </Box>
 
-            <LiveEditor className={props.className} />
+            <Box ess={{ overflow: 'auto' }}>
+              <LiveEditor className={props.className} />
+            </Box>
           </LiveProvider>
         </Box>
       )}

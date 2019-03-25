@@ -7,10 +7,9 @@ const Sidebar = () => {
     <Box
       ess={{
         pt: 2,
+        pb: 5,
         minHeight: '100vh',
-        bg: 'palette.grey.50',
-        borderRight: `1px solid`,
-        borderColor: 'palette.grey.200',
+        bg: ['white', 'white', 'palette.grey.50'],
         ul: {
           listStyle: 'none',
         },

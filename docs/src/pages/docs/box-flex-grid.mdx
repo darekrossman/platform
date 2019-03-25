@@ -1,1 +1,51 @@
 # Box, Flex, and Grid
+
+## Simple grids using Flex
+
+```jsx noInline
+const col = (spanFactor, push = 0) => {
+  return `calc(${spanFactor * 100}% - ${push ? Math.pow(2, push + 1) : 0}px)`
+}
+
+render(() => (
+  <Flex
+    ess={{
+      flexWrap: 'wrap',
+      alignSelf: 'stretch',
+      '.ess_Box': { bg: 'palette.blue.100', textAlign: 'center', my: 2 },
+    }}
+  >
+    <Box ess={{ flexBasis: [col(6 / 6), col(4 / 6, 3)] }} mr={[0, 3]}>
+      1
+    </Box>
+    <Box ess={{ flexBasis: [col(3 / 6, 3), col(1 / 6, 3)] }} mr={3}>
+      2
+    </Box>
+    <Box ess={{ flexBasis: [col(3 / 6), col(1 / 6)] }}>3</Box>
+  </Flex>
+))
+```
+
+## CSS Grid
+
+The following example uses `<Grid />`, which is just a `<Box />` with its display set to `grid` by default. Here we're using a 6-column grid at the smallest breakpoint, and a 17-column grid for all other breakpoints.
+
+```jsx noInline
+render(() => (
+  <Grid
+    ess={{
+      width: '100%',
+      gridTemplateColumns: ['repeat(6, 1fr)', 'repeat(17, 1fr)'],
+      gridGap: [3, 2],
+      '.ess_Box': {
+        bg: 'palette.green.200',
+        textAlign: 'center',
+      },
+    }}
+  >
+    <Box ess={{ gridColumn: ['span 6', '2/4'] }}>1</Box>
+    <Box ess={{ gridColumn: ['span 3', '5/14'] }}>2</Box>
+    <Box ess={{ gridColumn: ['span 3', '15/17'] }}>3</Box>
+  </Grid>
+))
+```

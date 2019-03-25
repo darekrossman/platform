@@ -4,7 +4,7 @@ import palette from 'material-colors'
 
 const baseHeight = 8
 
-const breakpoints = ['40em', '52em', '64em', '100em']
+const breakpoints = ['40em', '60em', '64em', '100em']
 
 const fontFamilies = [
   `-apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif`,
@@ -158,7 +158,7 @@ const LinkVariants = {}
 const Box = {}
 const BoxVariants = {
   container: {
-    maxWidth: 680,
+    maxWidth: ['100%', 680],
     px: 3,
     width: '100%',
     mx: 'auto',
