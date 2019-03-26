@@ -34,8 +34,9 @@ Looking at what a standard modal actually does, we can see that its really just 
 
 ```jsx noInline
 const Modal = ({ isOpen, children }) =>
-  isOpen && (
-    <Flex variant="cover" position="fixed">
+  isOpen &&
+  createPortal(
+    <Flex variant="cover" position="fixed" zIndex={9999}>
       <Box
         variant="cover"
         position="fixed"
@@ -45,7 +46,8 @@ const Modal = ({ isOpen, children }) =>
       <Box position="relative" width={475} m="auto" zIndex={2}>
         {children}
       </Box>
-    </Flex>
+    </Flex>,
+    document.body
   )
 
 render(() => {

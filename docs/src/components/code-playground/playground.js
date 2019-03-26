@@ -1,4 +1,5 @@
 import React from 'react'
+import { createPortal } from 'react-dom'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import { Box, Flex, Grid, Text, Button, Image } from '@64labs/ui'
@@ -12,6 +13,7 @@ const scope = {
   Text,
   Button,
   Image,
+  createPortal,
   ...hooks,
 }
 
@@ -19,7 +21,7 @@ export default ({ children, ...props }) => {
   const language = props.className.replace('language-', '')
 
   return (
-    <Box css={prismTheme} mb={4}>
+    <Box css={prismTheme} mb={4} mx={-3}>
       {language !== 'jsx' ? (
         <Highlight
           {...defaultProps}

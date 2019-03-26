@@ -4,6 +4,7 @@ import MDXRenderer from './mdx-renderer'
 import Sidebar from './sidebar'
 
 const Layout = ({ children }) => {
+  const sidebarWidth = 320
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -25,18 +26,23 @@ const Layout = ({ children }) => {
       <Grid ess={{ gridTemplateColumns: ['100%', '100%', '1fr'] }}>
         <Box
           ess={{
-            zIndex: 11,
+            position: 'fixed',
             top: [0, 0, 64],
+            width: [
+              sidebarWidth,
+              sidebarWidth,
+              sidebarWidth - 80,
+              sidebarWidth - 40,
+            ],
             height: ['100vh', '100vh', 'calc(100vh - 64px)'],
             overflow: 'auto',
-            width: 250,
-            position: 'fixed',
+            zIndex: 11,
             boxShadow: ['0px 0px 16px rgba(0,0,0,0.15)', null, 'none'],
             borderRight: [0, 0, `1px solid`],
             borderColor: [0, 0, 'palette.grey.200'],
             transition: 'all .1s ease-out',
             transform: [
-              menuOpen ? 'translateX(0)' : 'translateX(-250px)',
+              menuOpen ? 'translateX(0)' : `translateX(${-sidebarWidth}px)`,
               null,
               'none',
             ],
@@ -44,7 +50,7 @@ const Layout = ({ children }) => {
         >
           <Sidebar />
         </Box>
-        <Box pl={[0, 0, 250]} pt={[4, 4, 5]}>
+        <Box pl={[0, 0, sidebarWidth - 60, sidebarWidth - 40]} pt={[4, 4, 5]}>
           <Box variant="container">
             <MDXRenderer>{children}</MDXRenderer>
           </Box>
